@@ -1,0 +1,320 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdflang={ru-RU},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{russian}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{library}\NormalTok{(}\StringTok{"svd"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"forecast"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"Rssa"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"lattice"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"parallel"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"doParallel"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(}\StringTok{"doRNG"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    trend\_function1 }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n)\{}
+      \CommentTok{\# Input: аргумент {-} отметка на временной оси}
+      \CommentTok{\# Output: значение тренда как функции в точке}
+      \FunctionTok{return}\NormalTok{ (}\DecValTok{2} \SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\FloatTok{0.03} \SpecialCharTok{*}\NormalTok{ n) }\SpecialCharTok{{-}} \FloatTok{0.1} \SpecialCharTok{*}\NormalTok{ n }\SpecialCharTok{{-}} \DecValTok{20}\NormalTok{)}
+\NormalTok{    \}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    harmonic\_component1\_function }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n)\{}
+      \CommentTok{\# Input: аргумент {-} отметка на временной оси}
+      \CommentTok{\# Output: значение гармонической компоненты как функции в точке}
+      \FunctionTok{return}\NormalTok{ (}\FloatTok{5.2} \SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi }\SpecialCharTok{*}\NormalTok{ n }\SpecialCharTok{/} \DecValTok{6} \SpecialCharTok{+}\NormalTok{ pi }\SpecialCharTok{/} \DecValTok{4}\NormalTok{))}
+\NormalTok{    \}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    harmonic\_component2\_function }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n)\{}
+      \CommentTok{\# Input: аргумент {-} отметка на временной оси}
+      \CommentTok{\# Output: значение гармонической компоненты как функции в точке}
+      \FunctionTok{return}\NormalTok{ (}\FloatTok{5.2} \SpecialCharTok{*} \FunctionTok{cos}\NormalTok{(}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pi }\SpecialCharTok{*}\NormalTok{ n }\SpecialCharTok{/} \DecValTok{3}\NormalTok{))}
+\NormalTok{    \}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \FunctionTok{set.seed}\NormalTok{(}\DecValTok{11{-}10{-}2021}\NormalTok{)}
+\NormalTok{    time\_series\_stamps }\OtherTok{=} \DecValTok{0}\SpecialCharTok{:}\DecValTok{100}
+\NormalTok{    actual\_trend }\OtherTok{\textless{}{-}} \FunctionTok{trend\_function1}\NormalTok{(time\_series\_stamps)}
+\NormalTok{    refined\_time\_series }\OtherTok{\textless{}{-}}\NormalTok{ actual\_trend }\SpecialCharTok{+} \FunctionTok{harmonic\_component1\_function}\NormalTok{(time\_series\_stamps) }\SpecialCharTok{+}
+      \FunctionTok{harmonic\_component2\_function}\NormalTok{(time\_series\_stamps)}
+\NormalTok{    harmonics }\OtherTok{\textless{}{-}}\NormalTok{ refined\_time\_series }\SpecialCharTok{{-}}\NormalTok{ actual\_trend}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \CommentTok{\#tol = 1e{-}3, maxiter = 1000, 1000 launches}
+
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{Sys.time}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2022-06-04 14:14:56 MSK"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  cores }\OtherTok{\textless{}{-}} \FunctionTok{detectCores}\NormalTok{()}
+\NormalTok{  cl }\OtherTok{\textless{}{-}} \FunctionTok{makeCluster}\NormalTok{(cores[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)}
+  \FunctionTok{registerDoParallel}\NormalTok{(cl)}
+\NormalTok{  M }\OtherTok{\textless{}{-}} \DecValTok{100}
+\NormalTok{  signal\_comp\_num }\OtherTok{\textless{}{-}} \DecValTok{6}
+  
+\NormalTok{  st }\OtherTok{\textless{}{-}} \FunctionTok{system.time}\NormalTok{(rejectEV }\OtherTok{\textless{}{-}} \FunctionTok{foreach}\NormalTok{(}
+    \AttributeTok{i =} \DecValTok{1}\SpecialCharTok{:}\NormalTok{M,}
+    \AttributeTok{.export =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}ssa\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}rnorm\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}reconstruct\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}iossa\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}mean\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}sort\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}grouping.auto\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}attr\textquotesingle{}}\NormalTok{),}
+    \AttributeTok{.combine =}\NormalTok{ rbind}
+\NormalTok{  ) }\SpecialCharTok{\%dorng\%}\NormalTok{ \{}
+    
+\NormalTok{    time\_series }\OtherTok{\textless{}{-}}\NormalTok{ refined\_time\_series }\SpecialCharTok{+} \FunctionTok{rnorm}\NormalTok{(}\DecValTok{101}\NormalTok{, }\AttributeTok{mean =} \DecValTok{0}\NormalTok{, }\AttributeTok{sd =} \FloatTok{0.2}\NormalTok{)}
+\NormalTok{    res }\OtherTok{\textless{}{-}}\NormalTok{ refined\_time\_series }\SpecialCharTok{{-}}\NormalTok{ actual\_trend}
+    
+\NormalTok{    s }\OtherTok{\textless{}{-}} \FunctionTok{ssa}\NormalTok{(time\_series, }\AttributeTok{L =} \DecValTok{48}\NormalTok{)}
+    
+    \CommentTok{\#iossa with 2 groups (auto grouping)}
+\NormalTok{    auto\_grouping }\OtherTok{\textless{}{-}} \FunctionTok{grouping.auto}\NormalTok{(s, }\AttributeTok{base =} \StringTok{"series"}\NormalTok{, }
+                    \AttributeTok{freq.bins =} \FunctionTok{list}\NormalTok{(}\AttributeTok{Tendency =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{240}\NormalTok{, }\AttributeTok{Trend =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{24}\NormalTok{), }
+                    \AttributeTok{threshold =} \FloatTok{0.7}\NormalTok{)}
+    
+\NormalTok{    trend\_comp\_all }\OtherTok{\textless{}{-}}\NormalTok{ auto\_grouping}\SpecialCharTok{$}\NormalTok{Trend}
+\NormalTok{    trend\_comp\_signal }\OtherTok{\textless{}{-}}\NormalTok{ trend\_comp\_all[trend\_comp\_all }\SpecialCharTok{\%in\%} \DecValTok{1}\SpecialCharTok{:}\NormalTok{signal\_comp\_num]}
+\NormalTok{    signal\_indices }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\NormalTok{signal\_comp\_num}
+\NormalTok{    res\_comp }\OtherTok{\textless{}{-}}\NormalTok{ signal\_indices[}\SpecialCharTok{!}\NormalTok{signal\_indices }\SpecialCharTok{\%in\%}\NormalTok{ trend\_comp\_signal]}
+    
+\NormalTok{    ioss2\_auto }\OtherTok{\textless{}{-}} \FunctionTok{iossa}\NormalTok{(s, }\AttributeTok{nested.groups =} \FunctionTok{list}\NormalTok{(trend\_comp\_signal, res\_comp), }\AttributeTok{tol =} \FloatTok{1e{-}3}\NormalTok{, }\AttributeTok{maxiter =} \DecValTok{1000}\NormalTok{)}
+\NormalTok{    rec2\_auto }\OtherTok{\textless{}{-}} \FunctionTok{reconstruct}\NormalTok{(ioss2\_auto, }\AttributeTok{groups =}\NormalTok{ ioss2\_auto}\SpecialCharTok{$}\NormalTok{iossa.groups)}
+    
+\NormalTok{    trend\_time\_series\_iossa2\_auto }\OtherTok{\textless{}{-}}\NormalTok{ rec2\_auto}\SpecialCharTok{$}\NormalTok{F1}
+\NormalTok{    residuals\_time\_series2\_auto }\OtherTok{\textless{}{-}}\NormalTok{ rec2\_auto}\SpecialCharTok{$}\NormalTok{F2}
+    
+    \CommentTok{\#iossa with 6 separate groups (no grouping)}
+\NormalTok{    ioss5 }\OtherTok{\textless{}{-}} \FunctionTok{iossa}\NormalTok{(s, }\AttributeTok{nested.groups =} \FunctionTok{list}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{), }\AttributeTok{tol =} \FloatTok{1e{-}3}\NormalTok{, }\AttributeTok{maxiter =} \DecValTok{1000}\NormalTok{)}
+\NormalTok{    g0\_iossa5 }\OtherTok{\textless{}{-}} \FunctionTok{grouping.auto}\NormalTok{(ioss5, }\AttributeTok{base =} \StringTok{"series"}\NormalTok{, }
+                    \AttributeTok{freq.bins =} \FunctionTok{list}\NormalTok{(}\AttributeTok{Tendency =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{240}\NormalTok{, }\AttributeTok{Trend =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{24}\NormalTok{), }
+                    \AttributeTok{threshold =} \FloatTok{0.7}\NormalTok{)}
+                   
+\NormalTok{    rec5 }\OtherTok{\textless{}{-}} \FunctionTok{reconstruct}\NormalTok{(ioss5, }\AttributeTok{groups =}\NormalTok{ g0\_iossa5)}
+\NormalTok{    trend\_time\_series\_iossa5 }\OtherTok{\textless{}{-}}\NormalTok{ rec5}\SpecialCharTok{$}\NormalTok{Trend}
+\NormalTok{    residuals\_time\_series5 }\OtherTok{\textless{}{-}} \FunctionTok{attr}\NormalTok{(rec5, }\StringTok{"residuals"}\NormalTok{) }\SpecialCharTok{{-}} \FunctionTok{attr}\NormalTok{(}\FunctionTok{reconstruct}\NormalTok{(ioss5, }\AttributeTok{groups =}\NormalTok{ ioss5}\SpecialCharTok{$}\NormalTok{iossa.groups), }\StringTok{"residuals"}\NormalTok{)}
+    
+    \CommentTok{\#iossa with 2 groups (manual grouping)}
+\NormalTok{    ioss2 }\OtherTok{\textless{}{-}} \FunctionTok{iossa}\NormalTok{(s, }\AttributeTok{nested.groups =} \FunctionTok{list}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{, }\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{), }\AttributeTok{tol =} \FloatTok{1e{-}3}\NormalTok{, }\AttributeTok{maxiter =} \DecValTok{1000}\NormalTok{)}
+\NormalTok{    rec2 }\OtherTok{\textless{}{-}} \FunctionTok{reconstruct}\NormalTok{(ioss2, }\AttributeTok{groups =}\NormalTok{ ioss2}\SpecialCharTok{$}\NormalTok{iossa.groups)}
+    
+\NormalTok{    trend\_time\_series\_iossa2 }\OtherTok{\textless{}{-}}\NormalTok{ rec2}\SpecialCharTok{$}\NormalTok{F1}
+\NormalTok{    residuals\_time\_series2 }\OtherTok{\textless{}{-}}\NormalTok{ rec2}\SpecialCharTok{$}\NormalTok{F2}
+    
+    \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{mse\_no\_grouping\_trend =} \FunctionTok{mean}\NormalTok{((trend\_time\_series\_iossa5 }\SpecialCharTok{{-}}\NormalTok{ actual\_trend) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{mse\_no\_grouping\_residuals =} \FunctionTok{mean}\NormalTok{((residuals\_time\_series5 }\SpecialCharTok{{-}}\NormalTok{ res) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{iter\_no\_grouping =}\NormalTok{ ioss5}\SpecialCharTok{$}\NormalTok{iossa.result}\SpecialCharTok{$}\NormalTok{iter,}
+               \AttributeTok{mse\_2\_groups\_manual\_trend =} \FunctionTok{mean}\NormalTok{((trend\_time\_series\_iossa2 }\SpecialCharTok{{-}}\NormalTok{ actual\_trend) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{mse\_2\_groups\_manual\_residuals =} \FunctionTok{mean}\NormalTok{((residuals\_time\_series2 }\SpecialCharTok{{-}}\NormalTok{ res) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{iter\_2\_groups\_manual =}\NormalTok{ ioss2}\SpecialCharTok{$}\NormalTok{iossa.result}\SpecialCharTok{$}\NormalTok{iter,}
+               \AttributeTok{mse\_auto\_grouping\_trend =} \FunctionTok{mean}\NormalTok{((trend\_time\_series\_iossa2\_auto }\SpecialCharTok{{-}}\NormalTok{ actual\_trend) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{mse\_auto\_grouping\_residuals =} \FunctionTok{mean}\NormalTok{((residuals\_time\_series2\_auto }\SpecialCharTok{{-}}\NormalTok{ res) }\SpecialCharTok{\^{}} \DecValTok{2}\NormalTok{),}
+               \AttributeTok{iter\_auto\_grouping =}\NormalTok{ ioss2\_auto}\SpecialCharTok{$}\NormalTok{iossa.result}\SpecialCharTok{$}\NormalTok{iter)}
+\NormalTok{  \})}
+  \FunctionTok{stopCluster}\NormalTok{(cl)}
+  
+\NormalTok{  trend\_mse }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{1}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{1}\NormalTok{]]), }\DecValTok{4}\NormalTok{)),}
+                 \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{4}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{4}\NormalTok{]]), }\DecValTok{4}\NormalTok{)),}
+                 \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{7}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{7}\NormalTok{]]), }\DecValTok{4}\NormalTok{)))}
+  
+\NormalTok{  residuals\_mse }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{2}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{2}\NormalTok{]]), }\DecValTok{4}\NormalTok{)),}
+                     \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{5}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{5}\NormalTok{]]), }\DecValTok{4}\NormalTok{)),}
+                     \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{8}\NormalTok{]]), }\DecValTok{4}\NormalTok{), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{8}\NormalTok{]]), }\DecValTok{4}\NormalTok{)))}
+  
+\NormalTok{  iterations\_num }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{3}\NormalTok{]])), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{3}\NormalTok{]]))),}
+                     \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{6}\NormalTok{]])), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{6}\NormalTok{]]))),}
+                     \FunctionTok{paste0}\NormalTok{(}\StringTok{"mean: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(rejectEV[[}\DecValTok{9}\NormalTok{]])), }\StringTok{", med: "}\NormalTok{, }\FunctionTok{round}\NormalTok{(}\FunctionTok{median}\NormalTok{(rejectEV[[}\DecValTok{9}\NormalTok{]]))))}
+\NormalTok{  result }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{trend\_mse =}\NormalTok{ trend\_mse, }\AttributeTok{residuals\_mse =}\NormalTok{ residuals\_mse, }\AttributeTok{iterations\_num =}\NormalTok{ iterations\_num)}
+  \FunctionTok{row.names}\NormalTok{(result) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"no grouping"}\NormalTok{, }\StringTok{"manual grouping"}\NormalTok{, }\StringTok{"auto grouping"}\NormalTok{)}
+  
+  \FunctionTok{library}\NormalTok{(knitr)}
+  \FunctionTok{print}\NormalTok{(result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                                 trend_mse             residuals_mse
+## no grouping      mean: 0.0031, med: 0.003  mean: 0.0054, med: 0.005
+## manual grouping mean: 0.0019, med: 0.0016 mean: 0.0044, med: 0.0041
+## auto grouping   mean: 0.3337, med: 0.0017 mean: 0.3268, med: 0.0044
+##                      iterations_num
+## no grouping     mean: 477, med: 372
+## manual grouping     mean: 4, med: 4
+## auto grouping       mean: 5, med: 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{kable}\NormalTok{(result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1818}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2955}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2955}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2273}}@{}}
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+trend\_mse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+residuals\_mse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+iterations\_num
+\end{minipage} \\
+\midrule
+\endhead
+no grouping & mean: 0.0031, med: 0.003 & mean: 0.0054, med: 0.005 &
+mean: 477, med: 372 \\
+manual grouping & mean: 0.0019, med: 0.0016 & mean: 0.0044, med: 0.0041
+& mean: 4, med: 4 \\
+auto grouping & mean: 0.3337, med: 0.0017 & mean: 0.3268, med: 0.0044 &
+mean: 5, med: 4 \\
+\bottomrule
+\end{longtable}
+
+\end{document}
